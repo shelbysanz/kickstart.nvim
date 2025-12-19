@@ -784,7 +784,7 @@ require('lazy').setup({
         --
         -- You can use 'stop_after_first' to run the first available formatter from the list
         -- javascript = { "prettierd", "prettier", stop_after_first = true },
-        python = { 'black' },
+        python = { 'isort', 'black' },
         javascript = { 'prettierd' },
         javascriptreact = { 'prettierd' },
         typescript = { 'prettierd' },
@@ -792,6 +792,22 @@ require('lazy').setup({
         json = { 'prettierd' },
         css = { 'prettierd' },
         html = { 'prettierd' },
+        xml = { 'xmlformatter' },
+        php = { 'php' },
+      },
+      formatters = {
+        php = {
+          command = 'vendor/bin/php-cs-fixer',
+          args = {
+            'fix',
+            '$FILENAME',
+            '--config=.php-cs-fixer.dist.php',
+          },
+          env = {
+            PHP_CS_FIXER_IGNORE_ENV = '1',
+          },
+          stdin = false,
+        },
       },
     },
   },
