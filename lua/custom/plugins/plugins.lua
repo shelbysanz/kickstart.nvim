@@ -1,5 +1,8 @@
 return {
   {
+    'tpope/vim-sleuth',
+  },
+  {
     'tpope/vim-fugitive',
     config = function()
       vim.keymap.set('n', '<leader>gs', ':tab G<CR>:Git<CR>')
@@ -36,14 +39,14 @@ return {
       }
     end,
   },
-  {
-    'sphamba/smear-cursor.nvim',
-    opts = { -- Default  Range
-      stiffness = 0.8, -- 0.6 - [0, 1]
-      trailing_stiffness = 0.5, -- 0.3 - [0, 1]
-      distance_stop_animating = 0.5, -- 0.1 - > 0
-    },
-  },
+  -- {
+  --   'sphamba/smear-cursor.nvim',
+  --   opts = { -- Default  Range
+  --     stiffness = 0.8, -- 0.6 - [0, 1]
+  --     trailing_stiffness = 0.5, -- 0.3 - [0, 1]
+  --     distance_stop_animating = 0.5, -- 0.1 - > 0
+  --   },
+  -- },
   {
     'm4xshen/hardtime.nvim',
     lazy = false,
@@ -105,5 +108,8 @@ return {
         desc = 'Diagnostics (Trouble)',
       },
     },
+  },
+  {
+    'ThePrimeagen/vim-be-good',
   },
 }
