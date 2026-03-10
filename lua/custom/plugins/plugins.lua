@@ -30,7 +30,9 @@ return {
     'r-cha/encourage.nvim',
     config = function()
       require('encourage').setup {
-        messages = {},
+        messages = {
+          '-.-  ',
+        },
       }
     end,
   },
@@ -107,4 +109,10 @@ return {
   {
     'ThePrimeagen/vim-be-good',
   },
+  -- {
+  --   'supermaven-inc/supermaven-nvim',
+  --   config = function()
+  --     require('supermaven-nvim').setup {}
+  --   end,
+  -- },
 }

@@ -756,7 +756,7 @@ require('lazy').setup({
       {
         '<leader>f',
         function()
-          require('conform').format { async = true, lsp_format = 'fallback' }
+          require('conform').format { async = false, lsp_format = 'fallback' }
         end,
         mode = '',
         desc = '[F]ormat buffer',
@@ -781,11 +781,10 @@ require('lazy').setup({
       formatters_by_ft = {
         lua = { 'stylua' },
         -- Conform can also run multiple formatters sequentially
-        -- python = { "isort", "black" },
+        python = { 'isort', 'black' },
         --
         -- You can use 'stop_after_first' to run the first available formatter from the list
         -- javascript = { "prettierd", "prettier", stop_after_first = true },
-        python = { 'isort', 'black' },
         javascript = { 'prettierd' },
         javascriptreact = { 'prettierd' },
         typescript = { 'prettierd' },
@@ -795,8 +794,12 @@ require('lazy').setup({
         html = { 'prettierd' },
         xml = { 'xmlformatter' },
         php = { 'php' },
+        go = { 'gofumpt' },
       },
       formatters = {
+        isort = {
+          prepend_args = { '--profile', 'black' },
+        },
         php = {
           command = 'vendor/bin/php-cs-fixer',
           args = {
@@ -809,7 +812,6 @@ require('lazy').setup({
           },
           stdin = false,
         },
-        go = { 'gofumpt' },
       },
     },
   },
